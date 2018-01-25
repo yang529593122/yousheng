@@ -16,7 +16,6 @@
 		</div>		
 	</div>
 </template>
-
 <script>
 	import AutoPlay from "./autoPlay/autoplay.vue"
 	export default {
@@ -108,6 +107,7 @@
 		width: 1190px;
 		margin: 0 auto;
 		margin-top: 20px;
+		overflow: hidden;
 	}
 	.shop-auto-paly-list{
 		padding-left: 3px;
