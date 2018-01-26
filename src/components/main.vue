@@ -16,6 +16,7 @@
 		</div>		
 	</div>
 </template>
+
 <script>
 	import AutoPlay from "./autoPlay/autoplay.vue"
 	export default {

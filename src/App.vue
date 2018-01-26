@@ -3,7 +3,12 @@
       <Header></Header>
       <Maue></Maue>      
       <Main></Main>
-			<Footer></Footer>
+      <life></life>
+      <showbox></showbox>
+      <showbox></showbox>
+      <showbox></showbox>
+      <showbox></showbox>
+      <showbox></showbox>
   </div>
 </template>
 
@@ -11,7 +16,8 @@
 	import Header from "./components/header.vue";
 	import Maue from "./components/maue.vue";
 	import Main from "./components/main.vue";
-	import Footer from "./components/footer.vue"
+	import Life from "./components/life.vue";
+	import Showbox from "./components/common/showbox.vue";
 	export default {
 	  data () {
 	    return {
@@ -21,8 +27,9 @@
 	  components:{
 	  	Header,
 	  	Maue,
-			Main,
-			Footer	  	
+	  	Main,
+	  	Life,
+	  	Showbox
 	  }
 	}
 </script>

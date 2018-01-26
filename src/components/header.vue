@@ -4,9 +4,10 @@
 	 		<div class="header-top-nav-left">
 	 			<ul>
 	 				<li>商城首页</li>
-	 				<li>欢迎光临！请<span>登录</span></li>	 				
+	 				<li>欢迎光临！请<span @click="showLoginMake">登录</span></li>	 				
 	 				<li>免费注册</li>
 	 			</ul>
+	 			<LoginMake :isShowLoginMake="isShowLoginMake" @select-type="closeLoginMake"></LoginMake>
 	 		</div>
 	 		<div class="header-top-nav-right">
  				<ul>
@@ -88,17 +89,20 @@
 
 <script>
 	import Tab from "./header/tab.vue"
+	import LoginMake from "./common/loginMake.vue"
 	export default {	 
 	  data () {
 	    return {	     
 	      isShowCity:false, //我的显示隐藏开关
-	      isCollect:false,
-	      isNav:false,	     
+	      isCollect:false,  //我的收藏的开关
+	      isNav:false,		//导航的开关
+	      isShowLoginMake:false, //登录框的开关
 	      arr:["首页","优惠券","抢购","团购","供求","店铺","资讯","积分商城"],	      	     
 	    }
 	  },
 	   components:{
-	   		Tab
+	   		Tab,
+	   		LoginMake
 	   },
 	   created: function(){
 	        this.$http.post('http://47.104.128.231:8082/shop_rest/rest/itemcat/list')
@@ -115,7 +119,7 @@
 	    },
 	  methods:{
 	  	headerShowCity(){	  		
-	  		 this.isShowCity = !this.isShowCity;
+	  		this.isShowCity = !this.isShowCity;
 	  	},
 	  	headerShowCollect(){
 	  		this.isCollect = !this.isCollect;
@@ -123,9 +127,12 @@
 	  	headerShowNav(){
 	  		this.isNav = !this.isNav;
 	  	},
-	  	hhh(){
-	  		
-	  	}
+	  	showLoginMake(){
+	  		this.isShowLoginMake=true;
+	  	},
+	  	closeLoginMake (type) {
+		   this.isShowLoginMake=type
+		}
 	  }
 	}
 </script>
