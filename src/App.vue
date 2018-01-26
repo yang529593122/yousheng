@@ -21,7 +21,8 @@
 	  components:{
 	  	Header,
 	  	Maue,
-	  	Main	  	
+			Main,
+			Footer	  	
 	  }
 	}
 </script>
